@@ -1,5 +1,11 @@
+##### 安装 
+```
+pod 'KLNetManager'
+```
 
-####网络请求封装说明
+
+
+#### 网络请求封装说明
 项目中的网络请求返回格式为统一的json数据，其返回体大致分为三类
 - 返回数据类型是 模型数组(模型列表)
 - 返回数据类型是 单个的模型(单个的词典,map)
@@ -170,4 +176,26 @@ resultModel:(RequestResultModel)result;
 resultComplete:(RequestResultComplete)result;
 ```
 
+#####  主体类
+- KLNetManager 
+    - 配置项目中网络请求的根目录
+    
+     ``` + (void)configBaseUrl:(NSString *)baseUrl; ```  
+      
+      
+    - 设置 后台返回的 数据字段的字段内容,默认是data
+    
+     ``` + (void)configDataType:(NSString *)type; ```
+
+    - 设置后台 成功返回数据时的状态码值，默认是200
+    
+        ``` + (void)configSuccessType:(NSInteger)type; ``` 
+        
+    -  设置返回数据中的msg字段 
+
+     ``` + (void)configMsg:(NSString *)type; ```
+    
+    - 设置AFN请求中的manager，通常情况下，可以不配置。如果项目中采用了ssl验证需要配置
+
+        ``` + (void)setupHttpSessionManager:(AFHTTPSessionManager *)manager; ```
 
