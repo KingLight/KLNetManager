@@ -19,37 +19,37 @@ pod 'KLNetManager'
 - 请求状态
 
 ```
-typedef NS_ENUM(NSUInteger, XFXRequestStatus) {
+typedef NS_ENUM(NSUInteger, KLRequestStatus) {
     ///失败
-    XFXRequestFailure,
+    KLRequestFailure,
     ///成功
-    XFXRequestSuccess
+    KLRequestSuccess
 };
 ```
 
 - 网络返回数组(列表)的回调
 
 ```
-typedef void(^RequestResultList)(XFXRequestStatus success, NSArray *modelArray, XFXRequestState *state);
+typedef void(^RequestResultList)(KLRequestStatus success, NSArray *modelArray, KLRequestState *state);
 ```
 
 
 - 网络返回单个模型的回调
 
 ```
-typedef void(^RequestResultModel)(XFXRequestStatus success, id model, XFXRequestState *state);
+typedef void(^RequestResultModel)(KLRequestStatus success, id model, KLRequestState *state);
 
 ```
 - 往返返回字典的回调
 
 ```
-typedef void(^RequestResultDict)(XFXRequestStatus success, NSDictionary *dict, XFXRequestState *state);
+typedef void(^RequestResultDict)(KLRequestStatus success, NSDictionary *dict, KLRequestState *state);
 ```
 
 - 返回成功或失败
 
 ```
-typedef void(^RequestResultComplete)(XFXRequestStatus success, XFXRequestState *state);
+typedef void(^RequestResultComplete)(KLRequestStatus success, KLRequestState *state);
 ```
 
 
